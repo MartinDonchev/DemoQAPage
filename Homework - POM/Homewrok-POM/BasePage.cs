@@ -12,7 +12,8 @@ namespace SelenuimAdvHomework.DemoQA.Pages
         {
             Driver = driver;
             Driver.Manage().Window.Maximize();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(6));
         }
 
         public virtual string Url { get; }

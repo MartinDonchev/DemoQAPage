@@ -22,7 +22,7 @@ namespace Homewrok2.Pages.GoogleSearch
         [SeleniumExtras.PageObjects.FindsBy(How = SeleniumExtras.PageObjects.How.XPath, Using = "//*[@name='q']")]
         public IWebElement SearchField { get; set; }
 
-        [SeleniumExtras.PageObjects.FindsBy(How = SeleniumExtras.PageObjects.How.XPath, Using = "//*[@id='tads']//h3")]
+        [SeleniumExtras.PageObjects.FindsBy(How = SeleniumExtras.PageObjects.How.XPath, Using = "//*[@id='rso']/div[1]")]
         public IWebElement FirstFoundItem { get; set; }
     }
 }

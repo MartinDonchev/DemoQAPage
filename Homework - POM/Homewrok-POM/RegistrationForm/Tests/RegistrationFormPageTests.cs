@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using SelenuimAdvHomework.DemoQA;
+using SelenuimAdvHomework.DemoQA.Tests;
 using SelenuimAdvHomework.RegistrationForm.Models;
 using SelenuimAdvHomework.RegistrationForm.Pages;
 using System;
@@ -22,9 +23,9 @@ namespace SelenuimAdvHomework.RegistrationForm.Tests
         public void SetUp()
         {
             Initialize();
-            _driver.Manage().Window.Maximize();
-            _driver.Navigate().GoToUrl(" http://automationpractice.com/index.php");
-            _registrationFormPage = new RegistrationFormPage(_driver);
+            Driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl(" http://automationpractice.com/index.php");
+            _registrationFormPage = new RegistrationFormPage(Driver);
             _user = UserFactory.CreateValidUser();
         }
 
@@ -33,7 +34,7 @@ namespace SelenuimAdvHomework.RegistrationForm.Tests
         {
             _registrationFormPage.signInButton.Click();
 
-            _driver.ScrollTo(_registrationFormPage.createAccountEmailAdressField);
+            Driver.ScrollTo(_registrationFormPage.createAccountEmailAdressField);
 
             _registrationFormPage.createAccountEmailAdressField.SendKeys(_user.createAccountEmailAdressField + "@gmail.com" + Keys.Enter);
 
@@ -50,7 +51,7 @@ namespace SelenuimAdvHomework.RegistrationForm.Tests
         [TearDown]
         public void TearDown()
         {
-            _driver.Quit();
+            Driver.Quit();
         }
 
     }

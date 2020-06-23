@@ -1,5 +1,6 @@
 ﻿using Fare;
 using OpenQA.Selenium;
+using SelenuimAdvHomework.DemoQA.Pages;
 using SelenuimAdvHomework.RegistrationForm.Models;
 using System;
 using System.Collections.Generic;
