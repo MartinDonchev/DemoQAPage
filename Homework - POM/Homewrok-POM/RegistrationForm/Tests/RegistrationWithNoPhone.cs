@@ -31,15 +31,9 @@ namespace SelenuimAdvHomework.RegistrationForm.Tests
         public void Registration_With_NoPhone()
         {
             _user.phoneNumberInCreateForm = String.Empty;
-                       
-            _registrationFormPage.signInButton.Click();
-           
-            Driver.ScrollTo(_registrationFormPage.createAccountEmailAdressField);
 
-            _registrationFormPage.createAccountEmailAdressField.SendKeys(_user.createAccountEmailAdressField + "@gmail.com" + Keys.Enter);
-
+            _registrationFormPage.NavigateToRegForm();
             _registrationFormPage.FillForm(_user);
-
             _registrationFormPage.registerButton.Click();
                         
             var NoPhoneNameError = _registrationFormPage.errorName.Text;

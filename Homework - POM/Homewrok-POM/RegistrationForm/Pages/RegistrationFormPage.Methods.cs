@@ -1,16 +1,19 @@
 ﻿using Fare;
 using OpenQA.Selenium;
+using SelenuimAdvHomework.DemoQA;
 using SelenuimAdvHomework.DemoQA.Pages;
 using SelenuimAdvHomework.RegistrationForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace SelenuimAdvHomework.RegistrationForm.Pages
 {
     public partial class RegistrationFormPage : BasePage
     {
         private object _driver;
+        private RegistrationFormModel _user;
 
         public RegistrationFormPage(IWebDriver driver)
             : base(driver)
@@ -44,7 +47,18 @@ namespace SelenuimAdvHomework.RegistrationForm.Pages
             assignAddressInCreateForm.SendKeys(user.assignAddressInCreateForm);
 
         }
-        
+
+        public void NavigateToRegForm()
+        {
+            _user = UserFactory.CreateValidUser();
+
+            signInButton.Click();
+
+            Driver.ScrollTo(createAccountEmailAdressField);
+
+            createAccountEmailAdressField.SendKeys(_user.createAccountEmailAdressField + "@gmail.com" + Keys.Enter);
+        }
+
     } 
 }
 

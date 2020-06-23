@@ -32,14 +32,9 @@ namespace SelenuimAdvHomework.RegistrationForm.Tests
         [Test]
         public void Registration_With_AllRequiredFields()
         {
-            _registrationFormPage.signInButton.Click();
 
-            Driver.ScrollTo(_registrationFormPage.createAccountEmailAdressField);
-
-            _registrationFormPage.createAccountEmailAdressField.SendKeys(_user.createAccountEmailAdressField + "@gmail.com" + Keys.Enter);
-
+            _registrationFormPage.NavigateToRegForm();
             _registrationFormPage.FillForm(_user);
-
             _registrationFormPage.registerButton.Click();
 
             var names = _registrationFormPage.namesOfLoggedUser.Text;

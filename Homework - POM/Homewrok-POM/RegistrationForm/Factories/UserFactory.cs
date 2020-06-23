@@ -16,7 +16,7 @@ namespace SelenuimAdvHomework.RegistrationForm
             return new RegistrationFormModel
             {
 
-                createAccountEmailAdressField = fixture.Create<string>(),
+                createAccountEmailAdressField = fixture.Create<string>().Substring(0 , 6),
                 firstNameInCreateAccount = "First Name",
                 lastNameInCreateAccount = "Last Name",
                 passwordInCreateAccount = "Password",
